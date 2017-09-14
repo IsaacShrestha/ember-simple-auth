@@ -1,6 +1,6 @@
 # Introduction
 
-Ember-simple-auth is a open-source project available in github. It is a lightweight plugin to implement authentication in Ember.js applications. Ember.js is an open-source JavaScript framework for web development. 
+Ember-simple-auth is a open-source project available in github. It is a lightweight plugin to implement authentication in EmberJS applications. EmberJS is an open-source JavaScript framework for web development. 
 
 Ember-simple-auth consists of 4 main building blocks - the session, a session store, authenticators and authorizers. The session service is the main interface that provides methods for authentication and invalidating the session. It also sets and reads the session data. The session store persists the session state; authenticators authenticate the session; and authorizers use the data retrieved by an authenticator and stored in the session to generate authorization data.
 
@@ -8,13 +8,13 @@ Ember-simple-auth consists of 4 main building blocks - the session, a session st
 
 * __Activity__: The project is actively accepting pull requests. Most of the open issues and pull requests have comments in them of some sorts even if they are not accepted which says that the community provides good support and guidance.
 
-* __Use__: It is a lightweight plugin which can be used with any emberjs applications to implement authentication. Heroku, Ghost, Runtastic, Krit and Crowdly are some of the companies using Ember-simple-auth.
+* __Use__: It is a lightweight plugin which can be used with any EmberJS applications to implement authentication. Heroku, Ghost, Runtastic, Krit and Crowdly are some of the companies using Ember-simple-auth.
 
-* __Popularity__: This repository has been forked 523 times. It has 169 contributors and well over 2,000 commits. Since, It can support all kinds of authentication and authorization mechanisms in Emberjs applications so are widely preferred while building web applications with Emberjs.
+* __Popularity__: This repository has been forked 523 times. It has 169 contributors and well over 2,000 commits. Since, It can support all kinds of authentication and authorization mechanisms in EmberJS applications so are widely preferred while building web applications with Emberjs.
 
 * __Languages used__: JavaScript (97%), HTML (2.6%) and CSS (0.1%)
 
-* __Platform__: JavaScript platform, Emberjs framework
+* __Platform__: JavaScript platform, EmberJS framework
 
 * __Document sources__: [http://ember-simple-auth.com/api/] (http://ember-simple-auth.com/api/)
 
@@ -45,7 +45,7 @@ License means the terms and conditions for use, reproduction and distribution. A
 __Reporting Issues__:
   * Issues should be created only bugs, feature requests etc.
   * Update to the latest release of Ember Simple Auth.
-  * Update to the latest releases of Ember.js, jQuery, Ember Data if possible.
+  * Update to the latest releases of EmberJS, jQuery, Ember Data if possible.
   * Include as much information as possible - this includes full stack traces etc.
   * Set up a demo that demonstrates the issue on JSFiddle or JSBin.
   
@@ -59,6 +59,7 @@ __Pull Requests__:
  __Run Tests__:
    * Fork the repository.
    * Run yarn install and bower install.
+   * Install PhantomJS to run the tests.
    * To run tests against the currently installed Ember version, run ember test.
    * To simulate a CI run: run yarn test && yarn run test:node.
  
@@ -83,7 +84,7 @@ Session information is stored in local storage. If the applications using Ember-
 
 # Functional security requirements for the software
 
-The requirements are mapped to Ember-simple-auth’s API. Ember-simple-auth provides various classes to use, These functional requirements are related to session management,  authentication, authorization and encryption.
+The requirements are mapped to Ember-simple-auth’s API. Ember-simple-auth provides various classes to use. These functional requirements are related to session management,  authentication, authorization and encryption.
 
 1. __Context__: Session Management
 
@@ -108,6 +109,6 @@ Ember-simple-auth defines several methods for checking session authentication,  
 __Keywords__: Familiarity, lightweight javascript, popularity
  > It has minimal requirements with respect to application structure, routes etc. With its pluggable strategies it can support all kinds of authentication and authorization mechanism.
  
-The above description is from Ember-simple-auth’s official website, which caught our attention, specifically in aspects of “minimal requirements” required and ability to “support for all kind of authentication and authorization mechanism”, viewing this from security point of view, this library seemed a perfect candidate for  software assurance project. 
+The above description is from Ember-simple-auth’s official website, which caught our attention, specifically in aspects of “minimal requirements” required and ability to “support for all kind of authentication and authorization mechanism”, viewing this from security point of view, this library seemed a perfect candidate for software assurance project. 
 
-Ember-simple-auth is one of the popular library for implementing authentication in projects developed using Emberjs framework, like ghost, runtastic, heroku, krit, crowdly. Our familiarity with JavaScript, concepts related to session management and authentication was our key motivator. Small size of the Ember-simple-auth will help us to understand moving parts of this JavaScript library in a better depth. In addition to that, the community maintaining Ember-simple-auth  is active and is willing to accept contributions.
+Ember-simple-auth is one of the popular library for implementing authentication in projects developed using EmberJS framework. It has been used in ghost, runtastic, heroku, krit, crowdly. Our familiarity with JavaScript, concepts related to session management and authentication was our key motivator. Small size of the Ember-simple-auth will help us to understand moving parts of this JavaScript library in a better depth. In addition to that, the community maintaining Ember-simple-auth  is active and is willing to accept contributions.
