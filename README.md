@@ -69,6 +69,7 @@ __Pull Requests__:
 # Security related history
 
 __Vulnerability__: Regular Expression Denial of Service (DoS)
+
 __Vulnerable module__: minimatch
 
 Minimatch is a minimalistic matching library used for converting glob expression into JavaScript RegExp objects. Affected versions of this package are vulnerable to Regular Expression Denial of Service attack. 
@@ -86,11 +87,11 @@ The requirements are mapped to Ember-simple-auth’s API. Ember-simple-auth prov
 
 1. __Context__: Session Management
 
-
+Ember-simple-auth stores a session cookies, by default on closing the browser session cookies are expired and deleted. However, users can configure cookie expiration period and store session persistently by selecting “Remember me”, which makes it prone to session hijacking. 
 
   * Functional security requirements:
-    * The system is expected to delete the stored session cookies
-    * The system  is expected to persist data upon using persist function
+    * The system is expected to delete the stored session cookies.
+    * The system  is expected to persist data upon using persist function.
     
 2. __Context__: Authentication, Authorization and Encryption
 
@@ -110,44 +111,3 @@ __Keywords__: Familiarity, lightweight javascript, popularity
 The above description is from Ember-simple-auth’s official website, which caught our attention, specifically in aspects of “minimal requirements” required and ability to “support for all kind of authentication and authorization mechanism”, viewing this from security point of view, this library seemed a perfect candidate for  software assurance project. 
 
 Ember-simple-auth is one of the popular library for implementing authentication in projects developed using Emberjs framework, like ghost, runtastic, heroku, krit, crowdly. Our familiarity with JavaScript, concepts related to session management and authentication was our key motivator. Small size of the Ember-simple-auth will help us to understand moving parts of this JavaScript library in a better depth. In addition to that, the community maintaining Ember-simple-auth  is active and is willing to accept contributions.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
