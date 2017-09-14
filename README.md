@@ -16,27 +16,27 @@ Ember-simple-auth consists of 4 main building blocks - the session, a session st
 
 * __Platform__: JavaScript platform, EmberJS framework
 
-* __Document sources__: [http://ember-simple-auth.com/api/] 
+* __Document sources__: http://ember-simple-auth.com/api/
 
   * __About Ember-simple-auth__ 
-      [https://github.com/simplabs/ember-simple-auth/tree/1.4.0#readme] 
+      https://github.com/simplabs/ember-simple-auth/tree/1.4.0#readme 
   
   * __API documentation__ 
-      [http://ember-simple-auth.com/api/] 
+      http://ember-simple-auth.com/api/ 
 
   * __Source repository__ 
-      [https://github.com/simplabs/ember-simple-auth] 
+      https://github.com/simplabs/ember-simple-auth 
 
   * __Issue tracking__
-      [https://github.com/simplabs/ember-simple-auth/issues] 
+      https://github.com/simplabs/ember-simple-auth/issues 
 
   * __Installation and user guide__
-      [https://github.com/simplabs/ember-simple-auth/tree/1.4.0#installation] 
+      https://github.com/simplabs/ember-simple-auth/tree/1.4.0#installation 
 
 
 # License, Procedures for making contributions and Contributor agreements
 
-Ember Simple Auth is developed by simplabs [GmbH/Marco Otte-Witte] (http://simplabs.com/) and contributors. It is released under the [MIT License] (https://github.com/simplabs/ember-simple-auth/blob/master/LICENSE)
+Ember Simple Auth is developed by simplabs [GmbH/Marco Otte-Witte](http://simplabs.com/) and contributors. It is released under the [MIT License](https://github.com/simplabs/ember-simple-auth/blob/master/LICENSE)
 
 ## MIT License
 License means the terms and conditions for use, reproduction and distribution. Any contribution to the project can be made abiding with the terms and conditions mentioned in the license document. Nothing mentioned in the license document can supersede or modify the terms of any separate license agreement that has been made between an individual or legal entity and the licensor. This project has MIT license and is free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell the copies of the Software. This copyright and notice permission should be included in all copies or substantial portions of the plugin. It is provided “As Is”, without any warranty of any kind.
