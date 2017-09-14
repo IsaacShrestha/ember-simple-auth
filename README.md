@@ -66,6 +66,59 @@ __Pull Requests__:
  The project is accepting pull requests. There are 13 open pull requests right now as well as 511 closed pull requests. 
 
 
+# Security related history
+
+__Vulnerability__: Regular Expression Denial of Service (DoS)
+__Vulnerable module__: minimatch
+
+Minimatch is a minimalistic matching library used for converting glob expression into JavaScript RegExp objects. Affected versions of this package are vulnerable to Regular Expression Denial of Service attack. 
+
+Regular Expression Denial of Service Attack is a type of Denial of Service attack in which many Regular Expression implementations may reach edge cases that causes them to work very slowly, allowing an attacker to exploit this and can cause the program to enter these extreme situations by using a Regex string and case the service to hang for a large periods of time. 
+
+__Vulnerability__: Cross-site scripting (XSS)
+
+Session information is stored in local storage. If the applications using Ember-simple-auth is XSS vulnerable than the session information can be read by the attacker. 
+
+
+# Functional security requirements for the software
+
+The requirements are mapped to Ember-simple-auth’s API. Ember-simple-auth provides various classes to use, These functional requirements are related to session management,  authentication, authorization and encryption.
+
+1. __Context__: Session Management
+
+
+
+  * Functional security requirements:
+    * The system is expected to delete the stored session cookies
+    * The system  is expected to persist data upon using persist function
+    
+2. __Context__: Authentication, Authorization and Encryption
+
+Ember-simple-auth defines several methods for checking session authentication,  such as authentication succeeded and invalidation succeeded. Ember-simple-auth requires session to be authenticated in order to authorize.
+
+ * Functional security requirements:
+   * The system is expected to provide access to routes only to authenticated session.
+   * The system is expected allow authorization to authorized user with authenticated session.
+   * The system is expected to encrypt session cookies to protect the from security attacks like session hijacking.
+
+
+# Motivation for selecting this project
+
+__Keywords__: Familiarity, lightweight javascript, popularity
+ > It has minimal requirements with respect to application structure, routes etc. With its pluggable strategies it can support all kinds of authentication and authorization mechanism.
+ 
+The above description is from Ember-simple-auth’s official website, which caught our attention, specifically in aspects of “minimal requirements” required and ability to “support for all kind of authentication and authorization mechanism”, viewing this from security point of view, this library seemed a perfect candidate for  software assurance project. 
+
+Ember-simple-auth is one of the popular library for implementing authentication in projects developed using Emberjs framework, like ghost, runtastic, heroku, krit, crowdly. Our familiarity with JavaScript, concepts related to session management and authentication was our key motivator. Small size of the Ember-simple-auth will help us to understand moving parts of this JavaScript library in a better depth. In addition to that, the community maintaining Ember-simple-auth  is active and is willing to accept contributions.
+
+
+
+
+
+
+
+
+
 
 
 
