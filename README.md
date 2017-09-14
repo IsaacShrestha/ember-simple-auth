@@ -34,4 +34,67 @@ Ember-simple-auth consists of 4 main building blocks - the session, a session st
       [https://github.com/simplabs/ember-simple-auth/tree/1.4.0#installation] (https://github.com/simplabs/ember-simple-auth/tree/1.4.0#installation)
 
 
+# License, Procedures for making contributions and Contributor agreements
+
+Ember Simple Auth is developed by simplabs [GmbH/Marco Otte-Witte] (http://simplabs.com/) and contributors. It is released under the [MIT License] (https://github.com/simplabs/ember-simple-auth/blob/master/LICENSE)
+
+## MIT License
+License means the terms and conditions for use, reproduction and distribution. Any contribution to the project can be made abiding with the terms and conditions mentioned in the license document. Nothing mentioned in the license document can supersede or modify the terms of any separate license agreement that has been made between an individual or legal entity and the licensor. This project has MIT license and is free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell the copies of the Software. This copyright and notice permission should be included in all copies or substantial portions of the plugin. It is provided “As Is”, without any warranty of any kind.
+
+## Procedures for making contributions
+__Reporting Issues__:
+  * Issues should be created only bugs, feature requests etc.
+  * Update to the latest release of Ember Simple Auth.
+  * Update to the latest releases of Ember.js, jQuery, Ember Data if possible.
+  * Include as much information as possible - this includes full stack traces etc.
+  * Set up a demo that demonstrates the issue on JSFiddle or JSBin.
+  
+__Pull Requests__:
+  * Fork the repository and implement changes.
+  * Run the tests - pull requests with failing tests are not accepted.
+  * Adhere to Ember-simple-auth's coding style
+  * Squash all commits into one before submitting.
+  * Provide a good description for the pull request - what does it add?, why is that needed?, etc.
+  
+ __Run Tests__:
+   * Fork the repository.
+   * Run yarn install and bower install.
+   * To run tests against the currently installed Ember version, run ember test.
+   * To simulate a CI run: run yarn test && yarn run test:node.
+ 
+ ## Contributor agreements
+ The project is accepting pull requests. There are 13 open pull requests right now as well as 511 closed pull requests. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
