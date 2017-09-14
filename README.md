@@ -16,22 +16,22 @@ Ember-simple-auth consists of 4 main building blocks - the session, a session st
 
 * __Platform__: JavaScript platform, EmberJS framework
 
-* __Document sources__: [http://ember-simple-auth.com/api/] (http://ember-simple-auth.com/api/)
+* __Document sources__: [http://ember-simple-auth.com/api/] 
 
   * __About Ember-simple-auth__ 
-      [https://github.com/simplabs/ember-simple-auth/tree/1.4.0#readme] (https://github.com/simplabs/ember-simple-auth/tree/1.4.0#readme)
+      [https://github.com/simplabs/ember-simple-auth/tree/1.4.0#readme] 
   
   * __API documentation__ 
-      [http://ember-simple-auth.com/api/] (http://ember-simple-auth.com/api/)
+      [http://ember-simple-auth.com/api/] 
 
   * __Source repository__ 
-      [https://github.com/simplabs/ember-simple-auth] (https://github.com/simplabs/ember-simple-auth)
+      [https://github.com/simplabs/ember-simple-auth] 
 
-  * __Issue tracking __
-      [https://github.com/simplabs/ember-simple-auth/issues] (https://github.com/simplabs/ember-simple-auth/issues)
+  * __Issue tracking__
+      [https://github.com/simplabs/ember-simple-auth/issues] 
 
   * __Installation and user guide__
-      [https://github.com/simplabs/ember-simple-auth/tree/1.4.0#installation] (https://github.com/simplabs/ember-simple-auth/tree/1.4.0#installation)
+      [https://github.com/simplabs/ember-simple-auth/tree/1.4.0#installation] 
 
 
 # License, Procedures for making contributions and Contributor agreements
