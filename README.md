@@ -131,39 +131,39 @@ Ember-simple-auth is one of the popular library for implementing authentication 
 
 [Misuse cases](https://www.lucidchart.com/invitations/accept/b39daaf5-cecb-4ba8-9401-0331b2b090a1)
 
-__Misuse case__: Session Hijacking
+* __Misuse case__: Session Hijacking
 
-⋅⋅⋅__Security requirement 1__: Encrypting session tokens
+  * __Security requirement 1__: Encrypting session tokens
 
-⋅⋅⋅In order to prevent session hijacking attacks, session tokens should be strongly encrypted. 
+In order to prevent session hijacking attacks, session tokens should be strongly encrypted. 
 
-__Security requirement 2__: Invalidating session tokens periodically
+  * __Security requirement 2__: Invalidating session tokens periodically
 
 The attackers may steal session tokens and use it to access critical information as a verified user. In order to mitigate stealing of session tokens, existing session tokens need to be invalidated and new session tokens should be generated periodically.
 
-__Security requirement 3__: Making the session data read-only
+  * __Security requirement 3__: Making the session data read-only
 
 The attackers may set user’s session data to the one known to him which is also known as session fixation. This attack can be prevented by making the session data read-only. If the session data are read-only then the attackers cannot set/write user’s session id as the one known to him. 
 
-__Security requirement 4__: Authenticating session token
+  * __Security requirement 4__: Authenticating session token
 
 The attackers may access critical information if they access user’s session token. In order to prevent unauthorized access, the new session token must be generated periodically and they must be authenticated in each event initiated by the user.
 
-__Security requirement 5__: Accepting session token only from valid source
+  * __Security requirement 5__: Accepting session token only from valid source
 
 The attackers may send session tokens that are previously known to them in order to access the application. To prevent this, ember simple auth should accept tokens from from valid sources.
 
 
-__Misuse case__: Injection attacks
+* __Misuse case__: Injection attacks
 
-__Security requirement 6__: Sanitizing user inputs
+  * __Security requirement 6__: Sanitizing user inputs
 
 Since, ember simple auth accepts user input to allow them to register and login, it might be prone to injection attacks. To prevent this attack, the user inputs should be sanitized as soon as they are provided by the users.
 
 
-__Misuse case__: DOS attacks
+* __Misuse case__: DOS attacks
 
-__Security requirement 7__: Using captcha
+  * __Security requirement 7__: Using captcha
 
 While registering users through ember simple auth, the attackers can use bots to produce massive amount of registration requests. This can lead to denial of service to other users. In order to prevent this attack, ember simple auth should provide provision of using captcha to confirm if the users are not a bot.
 
