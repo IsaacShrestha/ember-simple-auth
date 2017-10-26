@@ -112,3 +112,26 @@ __Keywords__: Familiarity, lightweight javascript, popularity
 The above description is from Ember-simple-auth’s official website, which caught our attention, specifically in aspects of “minimal requirements” required and ability to “support for all kind of authentication and authorization mechanism”, viewing this from security point of view, this library seemed a perfect candidate for software assurance project. 
 
 Ember-simple-auth is one of the popular library for implementing authentication in projects developed using EmberJS framework. It has been used in ghost, runtastic, heroku, krit, crowdly. Our familiarity with JavaScript, concepts related to session management and authentication was our key motivator. Small size of the Ember-simple-auth will help us to understand moving parts of this JavaScript library in a better depth. In addition to that, the community maintaining Ember-simple-auth  is active and is willing to accept contributions.
+
+
+# Requirements for Software Security Engineering
+
+## List of final assurance claims
+1. Ember simple auth provides acceptably sufficient security against session hijacking.
+2. Ember simple auth provides sufficient security against injection attacks to ember applications.
+3. Ember simple auth reduces instances of insufficient authorizations.
+4. Ember simple auth authentication mechanisms are acceptably secure for ember applications.
+5. Ember simple auth sufficiently protects secret information from getting exposed to third parties. 
+
+[Assurance claims](https://www.lucidchart.com/invitations/accept/20f0a02c-81fe-4f89-b1a8-9bdeb7412fdb)
+
+## The security requirements for the project captured using misuse case diagrams
+
+__Misuse case__: Session Hijacking
+__Security requirement 1__: Encrypting session tokens
+In order to prevent session hijacking attacks, session tokens should be strongly encrypted. 
+
+
+
+
+
