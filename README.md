@@ -114,20 +114,25 @@ The above description is from Ember-simple-auth’s official website, which caug
 Ember-simple-auth is one of the popular library for implementing authentication in projects developed using EmberJS framework. It has been used in ghost, runtastic, heroku, krit, crowdly. Our familiarity with JavaScript, concepts related to session management and authentication was our key motivator. Small size of the Ember-simple-auth will help us to understand moving parts of this JavaScript library in a better depth. In addition to that, the community maintaining Ember-simple-auth  is active and is willing to accept contributions.
 
 
+
 # Requirements for Software Security Engineering
 
 ## List of final assurance claims
+
+[Assurance claims](https://www.lucidchart.com/invitations/accept/4e43aec6-1320-466d-a5ff-15d2dc5eb8dd)
+
 1. Ember simple auth provides acceptably sufficient security against session hijacking.
 2. Ember simple auth provides sufficient security against injection attacks to ember applications.
 3. Ember simple auth reduces instances of insufficient authorizations.
 4. Ember simple auth authentication mechanisms are acceptably secure for ember applications.
 5. Ember simple auth sufficiently protects secret information from getting exposed to third parties. 
 
-[Assurance claims](https://www.lucidchart.com/invitations/accept/4e43aec6-1320-466d-a5ff-15d2dc5eb8dd)
-
 ## The security requirements for the project captured using misuse case diagrams
 
+[Misuse cases](https://www.lucidchart.com/invitations/accept/b39daaf5-cecb-4ba8-9401-0331b2b090a1)
+
 __Misuse case__: Session Hijacking
+
 __Security requirement 1__: Encrypting session tokens
 
 In order to prevent session hijacking attacks, session tokens should be strongly encrypted. 
@@ -148,55 +153,71 @@ __Security requirement 5__: Accepting session token only from valid source
 
 The attackers may send session tokens that are previously known to them in order to access the application. To prevent this, ember simple auth should accept tokens from from valid sources.
 
+
 __Misuse case__: Injection attacks
+
 __Security requirement 6__: Sanitizing user inputs
 
 Since, ember simple auth accepts user input to allow them to register and login, it might be prone to injection attacks. To prevent this attack, the user inputs should be sanitized as soon as they are provided by the users.
 
+
 __Misuse case__: DOS attacks
+
 __Security requirement 7__: Using captcha
 
 While registering users through ember simple auth, the attackers can use bots to produce massive amount of registration requests. This can lead to denial of service to other users. In order to prevent this attack, ember simple auth should provide provision of using captcha to confirm if the users are not a bot.
+
 
 ## Alignment of security requirements with advertised features in Ember simple auth documentation
 The alignment of security requirements with the advertised features in the documentation are presented below:
 
 __Security requirement 1__: Encrypting session tokens
+
 __Addressed by the documentation?__ No
+
 [Source](https://github.com/simplabs/ember-simple-auth#authorizers)
 
 Session token / Session ID is used to uniquely identify user sessions on the server, This  session token can have various format, ranging from simple text to encoded string. Ember Simple Auth does not mention any feature that can be used to encrypt session tokens.However, we can workaround using existing features. User can create their own encryption mechanism and then create a custom authorizer to process encrypted session tokens, we can recommend this alternative method as an improvement to the documentation  Ember simple auth’s documentation on github provides examples to implement custom authorization.
 
 __Security requirement 2__: Invalidating session tokens periodically
+
 __Addressed by the documentation?__ No
+
 [Source](https://ember-simple-auth.com/api/classes/ApplicationRouteMixin.html)
 
 Ember simple auth’s documentation does not mention about any features that provide the functionality to invalidate session token periodically. Usually, properties of session token varies from application to application, It is upto application how they define it.
 However, the documentation mentions of methods such as invalidateSession(), which can be creatively used to perform the required need. Perhaps, this use of the invalidateSession()can be recommended as feature improvement.
 
 __Security Requirement 3__: Making the session data read-only
+
 __Addressed by the documentation?__ Yes
+
 [Source](https://github.com/simplabs/ember-simple-auth#the-session-service)
 
 Ember simple auth’s documentation mentions that “While the special authenticated section in the session data contains the data that was acquired by the authenticator when it authenticated the session and is read-only”
 
 __Security Requirement 4__: Authenticating session token
+
 __Addressed by the documentation?__ Yes
+
 [Source](https://github.com/simplabs/ember-simple-auth#authenticators)
 
 Ember simple auth’s documentation mentions about variety of authenticators and their feature and implementation ideas.
 
 __Security Requirement 5__: Accepting session token only from valid source
+
 __Addressed by the documentation?__ No
 
 Ember simple auth’s documentation does not mention any feature that can ensure that session accepted should originate from valid source. However, this can be recommended as a feature improvement.
 
 __Security Requirement 6__: Sanitizing user inputs
+
 __Addressed by the documentation?__ No
 
 Ember simple auth’s documentation does not mention any features to sanitize user inputs.We are uncertain, if Ember Simple Auth consider this feature is out of their scope to implement. And they left this implementation to developers of ember app.
 
 __Security Requirement 7__: Using captcha 
+
 __Addressed by the documentation?__ No
 
 Ember Simple Auth’s documentation does not mention ‘captcha’ as their authentication feature. Captcha for authentication perhaps might be implemented through ember-simple-auth’s one of the many authenticators(for eg: Oauth2 , Devise, Torii), but the documentation does not mention of any detailed authentication features that can be implemented through their available authenticators.
@@ -204,26 +225,20 @@ We can recommend to improve the documentation by listing the available authentic
 
 ## Security related configuration and installation issues in Ember simple auth documentation
 
+1. Installation guide
 
+Proper documentation for installation along with link to dummy application that shows how it should function after correct installation.
 
+2. Inject session service
 
+After installation ember simple auth needs to inject session service wherever required in the application, and also handle the display of login and logout button based on current state. Documentation contains good explanation of this and also guide how to do it by providing code examples.
 
+3. Authenticators and authorizers
+[Source](https://github.com/simplabs/ember-simple-auth#authenticators)
 
+The documentation explains how the current session token can be authenticated. It can use various authentication mechanism like OAuth2, Devise Authenticator, and Torri Authenticator. It also explains how these authenticators can be used. However, it doesn’t explain about the security requirements while using these authenticators. Although, these authenticators are  popular but they do not guarantee a request’s confidentiality, which could lead to several threats such as eavesdropping. By mentioning this in the documentation and asking users to use secure connection such as SSL can be a mitigating measure for this issue. We plan to open an issue related to this in ember simple auth OSS community and request them to update it in their documentation.  
 
+4. Failure in specific browers like Safari
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Web application using ember simple auth fails in safari when private browsing is turned on with a QuotaExceededError. The easiest fix to this would be using custom store that extends SimpleAuth.Stores.LocalStorage. This is already a closed issue but the fixation or warning of this issue is not mentioned in the documentation. We would request the ember simple auth community to mention this in their documentation and aware future users. 
 
