@@ -133,19 +133,19 @@ Ember-simple-auth is one of the popular library for implementing authentication 
 
 __Misuse case__: Session Hijacking
 
-__Security requirement 1__: Encrypting session tokens
+...__Security requirement 1__: Encrypting session tokens
 
-In order to prevent session hijacking attacks, session tokens should be strongly encrypted. 
+...In order to prevent session hijacking attacks, session tokens should be strongly encrypted. 
 
-__Security requirement 2__: Invalidating session tokens periodically
+...__Security requirement 2__: Invalidating session tokens periodically
 
-The attackers may steal session tokens and use it to access critical information as a verified user. In order to mitigate stealing of session tokens, existing session tokens need to be invalidated and new session tokens should be generated periodically.
+...The attackers may steal session tokens and use it to access critical information as a verified user. In order to mitigate stealing of ...session tokens, existing session tokens need to be invalidated and new session tokens should be generated periodically.
 
-__Security requirement 3__: Making the session data read-only
+...__Security requirement 3__: Making the session data read-only
 
-The attackers may set user’s session data to the one known to him which is also known as session fixation. This attack can be prevented by making the session data read-only. If the session data are read-only then the attackers cannot set/write user’s session id as the one known to him. 
+...The attackers may set user’s session data to the one known to him which is also known as session fixation. This attack can be ...prevented by making the session data read-only. If the session data are read-only then the attackers cannot set/write user’s session ...id as the one known to him. 
 
-__Security requirement 4__: Authenticating session token
+...__Security requirement 4__: Authenticating session token
 
 The attackers may access critical information if they access user’s session token. In order to prevent unauthorized access, the new session token must be generated periodically and they must be authenticated in each event initiated by the user.
 
