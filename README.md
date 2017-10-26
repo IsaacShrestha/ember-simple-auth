@@ -225,15 +225,16 @@ We can recommend to improve the documentation by listing the available authentic
 
 ## Security related configuration and installation issues in Ember simple auth documentation
 
-1. Installation guide
+* Installation guide
 
 Proper documentation for installation along with link to dummy application that shows how it should function after correct installation.
 
-2. Inject session service
+* Inject session service
 
 After installation ember simple auth needs to inject session service wherever required in the application, and also handle the display of login and logout button based on current state. Documentation contains good explanation of this and also guide how to do it by providing code examples.
 
-3. Authenticators and authorizers
+* Authenticators and authorizers
+
 [Source](https://github.com/simplabs/ember-simple-auth#authenticators)
 
 The documentation explains how the current session token can be authenticated. It can use various authentication mechanism like OAuth2, Devise Authenticator, and Torri Authenticator. It also explains how these authenticators can be used. However, it doesn’t explain about the security requirements while using these authenticators. Although, these authenticators are  popular but they do not guarantee a request’s confidentiality, which could lead to several threats such as eavesdropping. By mentioning this in the documentation and asking users to use secure connection such as SSL can be a mitigating measure for this issue. We plan to open an issue related to this in ember simple auth OSS community and request them to update it in their documentation.  
