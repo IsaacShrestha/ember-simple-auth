@@ -249,3 +249,8 @@ Web application using ember simple auth fails in safari when private browsing is
 [Threat model for Ember simple auth](https://akamazing.github.io/reports/threatModel)
 
 # Code analysis
+
+## Code review strategy
+[Code review for Ember simple auth](https://akamazing.github.io/reports/codeReview)
+
+
