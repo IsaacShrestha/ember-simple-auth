@@ -243,3 +243,9 @@ The documentation explains how the current session token can be authenticated. I
 
 Web application using ember simple auth fails in safari when private browsing is turned on with a QuotaExceededError. The easiest fix to this would be using custom store that extends SimpleAuth.Stores.LocalStorage. This is already a closed issue but the fixation or warning of this issue is not mentioned in the documentation. We would request the ember simple auth community to mention this in their documentation and aware future users. 
 
+
+# Threat model
+
+[Threat model for Ember simple auth](https://akamazing.github.io/reports/threatModel)
+
+# Code analysis
