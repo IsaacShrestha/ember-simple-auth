@@ -272,7 +272,7 @@ ESA has several external dependencies. It depends on other authentication librar
 Following are the weaknesses found through manual code review:
 
 1. Review authenticator for a potential denial of service attack.(CWE 285, 400)
-Code in file ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js is used for accessing client-side token as an argument â€˜dataâ€™ when used to authenticate using Facebook, Gmail, Microsoft or GitHub account. 
+Code in file ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js is used for accessing client-side token as an argument 'data' when used to authenticate using Facebook, Gmail, Microsoft or GitHub account. 
 
 ```
 restore(data) {
@@ -293,7 +293,7 @@ These functions are used to restore the session from a session data object. They
 2. ESA should satisfactorily mitigate denial of service (CWE 285, 400)
 The code snippet in ember-simple-auth/addon/authorizers/oauth2-bearer.js is given below.
 ```
-	authorize(data, block) {
+authorize(data, block) {
     const accessToken = data['access_token'];
     if (!isEmpty(accessToken)) {
       block('Authorization', `Bearer ${accessToken}`);
@@ -301,7 +301,7 @@ The code snippet in ember-simple-auth/addon/authorizers/oauth2-bearer.js is give
   }
 ```
 
-This code is syntactically correct. But it deals with token-data that it get in 'data' parameters. We find that the only condition it checks is whether 'accessToken' variable is empty or not. If the source of â€˜accessTokenâ€™ is not verified, there can be illegal and multiple attempts to insert tokens by third parties leading denial-of-service attack. 
+This code is syntactically correct. But it deals with token-data that it get in 'data' parameters. We find that the only condition it checks is whether 'accessToken' variable is empty or not. If the source of 'accessToken' is not verified, there can be illegal and multiple attempts to insert tokens by third parties leading denial-of-service attack. 
 	
 ## Automated code scanning
 
