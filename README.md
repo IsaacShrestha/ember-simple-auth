@@ -353,7 +353,7 @@ Our plan was to send pull request for:
 
 The first one was already opened and closed issue stating that the problem is due to minimatch rather than ESA library. 
 
-The second is stated to be out-of-scope of ESA according to the discussion [here](https://github.com/heartsentwined/ember-auth/issues/61). 
+The second is stated to be out-of-scope of ESA. According to the discussion [here](https://github.com/heartsentwined/ember-auth/issues/61) ESA author argues that it should be handled by OAuth2 framework and not ESA. 
 
 
 
