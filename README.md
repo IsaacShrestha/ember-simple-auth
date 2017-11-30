@@ -262,7 +262,7 @@ We focused on following scenarios, based on our misuse case and threat modeling 
 * ESA should handle user data flow between Ember applications and server without interruption	
 
 2. Weakness analysis review
-ESA has several external dependencies. It depends on other authentication libraries like OAuth2, Torii, JavaScript libraries (like NodeJS, CORS, GLOB, Morgan, Express),  JQuery libraries and EmberJS. The weaknesses in these can become weaknesses for ESA as well. Thus, weakness analysis review of dependencies of ESA is crucial.   
+ESA has several external dependencies. It depends on other authentication libraries like OAuth2, Torii, JavaScript libraries (like NodeJS, CORS, GLOB, Morgan, Express), JQuery libraries and EmberJS. The weaknesses in these can become weaknesses for ESA as well. Thus, weakness analysis review of dependencies of ESA is crucial.   
 
 ## Manual code review of critical security functions identified in misuse cases and threat models
 
@@ -274,7 +274,7 @@ Following are the weaknesses found through manual code review:
 1. Review authenticator for a potential denial of service attack.(CWE 285, 400)
 Code in file ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js is used for accessing client-side token as an argument â€˜dataâ€™ when used to authenticate using Facebook, Gmail, Microsoft or GitHub account. 
 
-'''
+```
 restore(data) {
     return new RSVP.Promise((resolve, reject) => {
       if (!this._validateData(data)) {
@@ -286,22 +286,22 @@ restore(data) {
 _validateData(data) {
 	return !isEmpty(data) && !isEmpty(data.access_token);
 }
-'''
+```
 
-These functions are used to restore the session from a session data object. They will return a resolving promise when there is non-empty â€˜access_tokenâ€™ in the session data and a rejecting promise otherwise. The function does not verify the origin of data or the validity of request. The Eavesdropping by simple man-in-the-middle proxies can do a denial of service attack by sending random data to restore(data) and keeping the resources busy. 
+These functions are used to restore the session from a session data object. They will return a resolving promise when there is non-empty 'access_token' in the session data and a rejecting promise otherwise. The function does not verify the origin of data or the validity of request. The Eavesdropping by simple man-in-the-middle proxies can do a denial of service attack by sending random data to restore(data) and keeping the resources busy. 
 
 2. ESA should satisfactorily mitigate denial of service (CWE 285, 400)
 The code snippet in ember-simple-auth/addon/authorizers/oauth2-bearer.js is given below.
-'''
+```
 	authorize(data, block) {
     const accessToken = data['access_token'];
     if (!isEmpty(accessToken)) {
       block('Authorization', `Bearer ${accessToken}`);
     }
   }
-'''
+```
 
-This code is syntactically correct. But it deals with token-data that it get in â€˜dataâ€™ parameters. We find that the only condition it checks is whether â€˜accessTokenâ€™ variable is empty or not. If the source of â€˜accessTokenâ€™ is not verified, there can be illegal and multiple attempts to insert tokens by third parties leading denial-of-service attack. 
+This code is syntactically correct. But it deals with token-data that it get in 'data' parameters. We find that the only condition it checks is whether 'accessToken' variable is empty or not. If the source of â€˜accessTokenâ€™ is not verified, there can be illegal and multiple attempts to insert tokens by third parties leading denial-of-service attack. 
 	
 ## Automated code scanning
 
@@ -337,20 +337,20 @@ According to our observation, we conclude ESA to be an effective library for all
 
 Links to any pull requests, issues, discussion, etc. from the team to the original project and any follow-up interactions. 
 
-	Our plan was to send pull request for:
-
-Vulnerable module: minimatch
-Description: Regular Expression Denial of Service (DoS)
-Severity: High
-CWE Mappings: 400, 185, and 
-Vulnerable module: ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js, ember-simple-auth/addon/authorizers/oauth2-bearer.js
-Description: Denial of Service (DoS)
-Severity: High
-CWE Mappings: 285, 400.
+Our plan was to send pull request for:
+> Vulnerable module: minimatch
+> Description: Regular Expression Denial of Service (DoS)
+> Severity: High
+> CWE Mappings: 400, 185, and 
+  
+> Vulnerable module: ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js, ember-simple-auth/addon/authorizers/oauth2-bearer.js
+> Description: Denial of Service (DoS)
+> Severity: High
+> CWE Mappings: 285, 400.
 
 The first one was already opened and closed issue stating that the problem is due to minimatch rather than ESA library. 
 
-The second is stated to be out-of-scope of ESA according to the discussion here. 
+The second is stated to be out-of-scope of ESA according to the discussion [here](https://github.com/heartsentwined/ember-auth/issues/61). 
 
 
 
