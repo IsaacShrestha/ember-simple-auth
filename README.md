@@ -335,21 +335,21 @@ Manual code review found the following weaknesses :
 > Severity: High.   
 > CWE Mappings: 285, 400.    
 
-According to our observation, we conclude ESA to be an effective library for all authentication and authorization needs for ember app. It provides sufficient methods to use the implemented authorizers and authenticators like OAuth2, Torii as well as options to extend the existing classes to create custom authorizers and authenticators. ESAâ€™s take on functionality is straightforward, that is to provide convenient methods for authentications and authorization and session management. Implementing security features we were looking for (i.e. input sanitization, parameter verification, channel encryption) either lies in the domain of developer of ember application or previously mentioned external framework. 
+According to our observation, we conclude ESA to be an effective library for all authentication and authorization needs for ember app. It provides sufficient methods to use the implemented authorizers and authenticators like OAuth2, Torii as well as options to extend the existing classes to create custom authorizers and authenticators. ESA take on functionality is straightforward, that is to provide convenient methods for authentications and authorization and session management. Implementing security features we were looking for (i.e. input sanitization, parameter verification, channel encryption) either lies in the domain of developer of ember application or previously mentioned external framework. 
 
 
-Links to any pull requests, issues, discussion, etc. from the team to the original project and any follow-up interactions. 
+##Links to any pull requests, issues, discussion, etc. from the team to the original project and any follow-up interactions. 
 
 Our plan was to send pull request for:
-> Vulnerable module: minimatch
-> Description: Regular Expression Denial of Service (DoS)
-> Severity: High
-> CWE Mappings: 400, 185, and 
+> Vulnerable module: minimatch.   
+> Description: Regular Expression Denial of Service (DoS).   
+> Severity: High.   
+> CWE Mappings: 400, 185.      
   
-> Vulnerable module: ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js, ember-simple-auth/addon/authorizers/oauth2-bearer.js
-> Description: Denial of Service (DoS)
-> Severity: High
-> CWE Mappings: 285, 400.
+> Vulnerable module: ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js, ember-simple-auth/addon/authorizers/oauth2-bearer.js     
+> Description: Denial of Service (DoS).    
+> Severity: High.   
+> CWE Mappings: 285, 400.    
 
 The first one was already opened and closed issue stating that the problem is due to minimatch rather than ESA library. 
 
