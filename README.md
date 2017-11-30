@@ -309,28 +309,31 @@ This code is syntactically correct. But it deals with token-data that it get in 
 * We also used [Retire.js](https://retirejs.github.io/retire.js/) to isolate the components with known vulnerability. The output from retire.js can be found [here](https://akamazing.github.io/reports/retireReport). 
 * At last we used [JSLint](http://www.jslint.com) to scan the codes for any syntax error or bad practices.
 
-Summary of key finding from manual and/or automated scanning. 
-The weaknesses and vulnerabilities found in ESA library is low. We performed manual code review and automated scanning to find possible weaknesses. We were interested in finding the weaknesses related to improper handling of session tokens, authentication, authorization, and syntactical errors. ESA is quite small library with lots of dependencies. Most of these weaknesses are due to the weaknesses in other dependent libraries. We have summarized severity vulnerabilities identified by automated scanners below:
-Vulnerable module: minimatch
-Description: Regular Expression Denial of Service (DoS)
-Severity: High
-CWE Mappings: 400, 185.
+## Summary of key finding from manual and/or automated scanning. 
+The weaknesses and vulnerabilities found in ESA library is low. We performed manual code review and automated scanning to find possible weaknesses. We were interested in finding the weaknesses related to improper handling of session tokens, authentication, authorization, and syntactical errors. ESA is quite small library with lots of dependencies. Most of these weaknesses are due to the weaknesses in other dependent libraries. We have summarized severity vulnerabilities identified by automated scanners below:   
 
-Vulnerable module: growl 1.9.2
-Description: Growl does not properly sanitize input before passing it to exec, allowing for arbitrary command execution.
-Severity: High
-CWE Mappings: 94, 77.
+> Vulnerable module: minimatch.   
+> Description: Regular Expression Denial of Service (DoS).        
+> Severity: High.       
+> CWE Mappings: 400, 185.    
 
-Vulnerable module: uglify-js 1.3.5
-Description: Incorrect Handling of Non-Boolean Comparisons During Minification.
-Severity: High
-CWE Mappings: 241.
+
+> Vulnerable module: growl 1.9.2      
+> Description: Growl does not properly sanitize input before passing it to exec, allowing for arbitrary command execution.    
+> Severity: High.    
+> CWE Mappings: 94, 77.    
+
+> Vulnerable module: uglify-js 1.3.5      
+> Description: Incorrect Handling of Non-Boolean Comparisons During Minification.       
+> Severity: High.    
+> CWE Mappings: 241.     
 
 Manual code review found the following weaknesses :
-Vulnerable module: ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js, ember-simple-auth/addon/authorizers/oauth2-bearer.js
-Description: Denial of Service (DoS)
-Severity: High
-CWE Mappings: 285, 400.
+
+> Vulnerable module: ember-simple-auth/addon/authenticators/oauth2-implicit-grant.js, ember-simple-auth/addon/authorizers/oauth2-bearer.js   
+> Description: Denial of Service (DoS).   
+> Severity: High.   
+> CWE Mappings: 285, 400.    
 
 According to our observation, we conclude ESA to be an effective library for all authentication and authorization needs for ember app. It provides sufficient methods to use the implemented authorizers and authenticators like OAuth2, Torii as well as options to extend the existing classes to create custom authorizers and authenticators. ESAâ€™s take on functionality is straightforward, that is to provide convenient methods for authentications and authorization and session management. Implementing security features we were looking for (i.e. input sanitization, parameter verification, channel encryption) either lies in the domain of developer of ember application or previously mentioned external framework. 
 
